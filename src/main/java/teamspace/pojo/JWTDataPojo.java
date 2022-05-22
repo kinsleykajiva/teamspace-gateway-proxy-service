@@ -4,11 +4,11 @@ public class JWTDataPojo {
 
     private int userId;
     private int role;
-    private int companyId;
+    private String companyId;
     private String fullName;
     private String jwt;
 
-    public JWTDataPojo(int userId, int role, int companyId, String fullName , String jwt) {
+    public JWTDataPojo(int userId, int role, String companyId, String fullName , String jwt) {
         this.userId = userId;
         this.role = role;
         this.companyId = companyId;
@@ -31,7 +31,7 @@ public class JWTDataPojo {
         return role;
     }
 
-    public int getCompanyId() {
+    public String getCompanyId() {
         return companyId;
     }
 

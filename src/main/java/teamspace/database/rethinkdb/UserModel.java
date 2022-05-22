@@ -39,6 +39,15 @@ public class UserModel {
 
 
     }
+    public static List<UserPojo> getAllUsersByCompanyId(final String companyClientId){
+        Cursor<UserPojo> cursor =  r.table("users")
+                .filter(row->row.g("companyClientId").eq(companyClientId))
+                .run(getinstance().getConn(), UserPojo.class);
+
+        return cursor.bufferedItems();
+
+
+    }
 
 
     public static UserPojo getAUserById(String id_){
