@@ -43,9 +43,9 @@ public class PreFilter extends ZuulFilter {
             try {
 
                 var decoded=  tokenDecoder(request,SecreteKey);
-                int userId = decoded.getUserId();
+                String userId = decoded.getUserId();
                 int role = decoded.getRole();
-                int companyId = decoded.getCompanyId();
+                var companyId = decoded.getCompanyId();
                 String fullName = decoded.getFullName();
 
                 ctx.addZuulRequestHeader("userId", String.valueOf(userId));

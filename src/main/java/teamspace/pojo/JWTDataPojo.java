@@ -2,13 +2,13 @@ package teamspace.pojo;
 
 public class JWTDataPojo {
 
-    private int userId;
+    private String userId;
     private int role;
     private String companyId;
     private String fullName;
     private String jwt;
 
-    public JWTDataPojo(int userId, int role, String companyId, String fullName , String jwt) {
+    public JWTDataPojo(String userId, int role, String companyId, String fullName , String jwt) {
         this.userId = userId;
         this.role = role;
         this.companyId = companyId;
@@ -23,7 +23,7 @@ public class JWTDataPojo {
         return jwt;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
@@ -37,5 +37,17 @@ public class JWTDataPojo {
 
     public String getFullName() {
         return fullName;
+    }
+
+
+    @Override
+    public String toString() {
+        return "JWTDataPojo{" +
+                "userId='" + userId + '\'' +
+                ", role=" + role +
+                ", companyId='" + companyId + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", jwt='" + jwt + '\'' +
+                '}';
     }
 }

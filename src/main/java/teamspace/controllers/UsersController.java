@@ -96,17 +96,17 @@ public class UsersController {
 
         String accessToken = JWT.create()
                 .withSubject(user.getEmail())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000 * 24 * 30)) /*30 days */
+                .withExpiresAt(new Date(System.currentTimeMillis() + 60L * 60 * 1000 * 24 * 30)) /*30 days */
                 .withIssuer(request.getRequestURI().toString())
                 .withPayload(payloadClaims)
-                .withClaim("userId", user.getId())
+                .withClaim("userId", user.getId_())
 
 
                 .sign(algorithm);
         String refreshToken = JWT.create()
                 .withSubject(user.getEmail())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000 * 24 * 30)) /*30 days */
-                .withIssuer(request.getRequestURI().toString())
+                .withExpiresAt(new Date(System.currentTimeMillis() + 60L * 60 * 1000 * 24 * 30)) /*30 days */
+                .withIssuer(request.getRequestURI())
                 .sign(algorithm);
 
         var dataObject = Map.of(

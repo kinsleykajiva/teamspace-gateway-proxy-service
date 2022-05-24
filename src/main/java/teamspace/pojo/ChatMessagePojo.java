@@ -6,7 +6,7 @@ package teamspace.pojo;
 
 public class ChatMessagePojo {
 
-    long id;
+
     String fromUserId , toUserId ,sentByUserId ,message , messageType ,companyClientId  ,myDateTime;
     boolean isActive ;
     String id_;
@@ -79,13 +79,6 @@ public class ChatMessagePojo {
         return isActive;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public void setActive(boolean active) {
         isActive = active;

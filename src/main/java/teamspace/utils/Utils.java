@@ -80,13 +80,13 @@ public class Utils {
         DecodedJWT decodedJWT = verifier.verify(jwt);
 
 
-        int userId = (decodedJWT.getClaim("userId").asInt());
+        String userId = (decodedJWT.getClaim("userId").asString());
         int role = Integer.parseInt(decodedJWT.getClaims().get("role")+"");
 
         log.info("loading claims ");
 
 
-        int companyId = (decodedJWT.getClaim("companyId").asInt());
+        String companyId = (decodedJWT.getClaim("companyId").asString());
         String fullName = (decodedJWT.getClaim("fullName").asString());
         return new JWTDataPojo(userId,role,companyId,fullName,jwt);
     }
